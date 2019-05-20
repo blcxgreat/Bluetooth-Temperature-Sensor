@@ -1,0 +1,200 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.2.178/W32 for ARM                  25/Jan/2019  21:18:37
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  C:\lab3\Debug\Exe\lab1part5.out
+#    Map file     =  C:\lab3\Debug\List\lab1part5.map
+#    Command line =  
+#        -f C:\Users\10737\AppData\Local\Temp\EW2286.tmp
+#        (C:\lab3\Debug\Obj\cstartup_M.o C:\lab3\Debug\Obj\OnboardSW.o
+#        --no_out_extension -o C:\lab3\Debug\Exe\lab1part5.out --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        C:\lab3\Debug\List\lab1part5.map --config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench
+#        8.2_3\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                     0x110
+  .intvec          const            0x0   0x110  cstartup_M.o [1]
+                                - 0x110   0x110
+
+"P1":                                     0x264
+  .text            ro code        0x110   0x164  OnboardSW.o [1]
+  .text            ro code        0x274    0x3a  zero_init3.o [4]
+  .text            ro code        0x2ae     0x2  cstartup_M.o [1]
+  .text            ro code        0x2b0    0x28  data_init.o [4]
+  .text            ro code        0x2d8    0x22  fpinit_M.o [3]
+  .iar.init_table  const          0x2fc    0x10  - Linker created -
+  .text            ro code        0x30c     0x2  cstartup_M.o [1]
+  .text            ro code        0x310    0x1e  cmain.o [4]
+  .text            ro code        0x32e     0x4  low_level_init.o [2]
+  .text            ro code        0x332     0x4  exit.o [2]
+  .text            ro code        0x336     0x2  cstartup_M.o [1]
+  .text            ro code        0x338     0xa  cexit.o [4]
+  .text            ro code        0x342     0x2  cstartup_M.o [1]
+  .text            ro code        0x344    0x14  exit.o [5]
+  .text            ro code        0x358    0x10  cstartup_M.o [1]
+  .text            ro code        0x368     0x2  cstartup_M.o [1]
+  .text            ro code        0x36a     0x2  cstartup_M.o [1]
+  .text            ro code        0x36c     0x2  cstartup_M.o [1]
+  .text            ro code        0x36e     0x2  cstartup_M.o [1]
+  .text            ro code        0x370     0x2  cstartup_M.o [1]
+  .text            ro code        0x372     0x2  cstartup_M.o [1]
+  .rodata          const          0x374     0x0  zero_init3.o [4]
+                                - 0x374   0x264
+
+"P2", part 1 of 2:                          0x8
+  .bss             zero     0x2000'0000     0x4  OnboardSW.o [1]
+  .bss             zero     0x2000'0004     0x4  OnboardSW.o [1]
+                          - 0x2000'0008     0x8
+
+"P2", part 2 of 2:                       0x1000
+  CSTACK                    0x2000'0008  0x1000  <Block>
+    CSTACK         uninit   0x2000'0008  0x1000  <Block tail>
+                          - 0x2000'1008  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x374     0x3'ffff  0x3'fc8c
+  0x2000'1008  0x2000'7fff    0x6ff8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x2000'0000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\lab3\Debug\Obj: [1]
+    OnboardSW.o           356                 8
+    cstartup_M.o           36      272
+    -------------------------------------------
+    Total:                392      272        8
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    data_init.o            40
+    zero_init3.o           58
+    -------------------------------------------
+    Total:                138
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    2        2
+    Linker created                  16    4 096
+-----------------------------------------------
+    Grand Total:          594      290    4 104
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0x2fc          --   Gb  - Linker created -
+.iar.init_table$$Limit        0x30c          --   Gb  - Linker created -
+?main                         0x311         Code  Gb  cmain.o [4]
+CSTACK$$Base            0x2000'0008          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1008          --   Gb  - Linker created -
+PortF_Init                    0x145   0x32  Code  Gb  OnboardSW.o [1]
+Region$$Table$$Base           0x2fc          --   Gb  - Linker created -
+Region$$Table$$Limit          0x30c          --   Gb  - Linker created -
+Timer_Handler                 0x177    0xe  Code  Gb  OnboardSW.o [1]
+Timer_Init                    0x111   0x34  Code  Gb  OnboardSW.o [1]
+__cmain                       0x311         Code  Gb  cmain.o [4]
+__exit                        0x345   0x14  Code  Gb  exit.o [5]
+__iar_data_init3              0x2b1   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp                0x2d9         Code  Gb  fpinit_M.o [3]
+__iar_program_start           0x359   0x10  Code  Gb  cstartup_M.o [1]
+__iar_zero_init3              0x275   0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init              0x32f    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x110  Data  Gb  cstartup_M.o [1]
+_call_main                    0x31d         Code  Gb  cmain.o [4]
+_exit                         0x339         Code  Gb  cexit.o [4]
+_main                         0x32b         Code  Gb  cmain.o [4]
+count                   0x2000'0000    0x4  Data  Gb  OnboardSW.o [1]
+exit                          0x333    0x4  Code  Gb  exit.o [2]
+flag                    0x2000'0004    0x4  Data  Gb  OnboardSW.o [1]
+main                          0x185   0x92  Code  Gb  OnboardSW.o [1]
+
+
+[1] = C:\lab3\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+    594 bytes of readonly  code memory
+    290 bytes of readonly  data memory
+  4 104 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

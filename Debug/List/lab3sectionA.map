@@ -1,0 +1,220 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.2.178/W32 for ARM                  27/Jan/2019  22:27:49
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  C:\lab3\Debug\Exe\lab3sectionA.out
+#    Map file     =  C:\lab3\Debug\List\lab3sectionA.map
+#    Command line =  
+#        -f C:\Users\10737\AppData\Local\Temp\EW2774.tmp
+#        (C:\lab3\Debug\Obj\cstartup_M.o C:\lab3\Debug\Obj\temperature.o
+#        --no_out_extension -o C:\lab3\Debug\Exe\lab3sectionA.out --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        C:\lab3\Debug\List\lab3sectionA.map --config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.2_3\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                      0x90
+  .intvec          const            0x0    0x90  cstartup_M.o [1]
+                                 - 0x90    0x90
+
+"P1":                                     0xa28
+  .text            ro code         0x90   0x2ac  temperature.o [1]
+  .text            ro code        0x33c    0x1a  U32ToDbl.o [3]
+  .text            ro code        0x356    0x3a  zero_init3.o [4]
+  .text            ro code        0x390   0x1a2  DblMul.o [3]
+  .text            ro code        0x532     0x2  cstartup_M.o [1]
+  .text            ro code        0x534   0x246  DblDiv.o [3]
+  .text            ro code        0x77a     0x2  cstartup_M.o [1]
+  .text            ro code        0x77c    0xe2  DblSub.o [3]
+  .text            ro code        0x85e     0x2  cstartup_M.o [1]
+  .text            ro code        0x860    0x2e  DblCmpLe.o [3]
+  .text            ro code        0x88e     0x2  cstartup_M.o [1]
+  .text            ro code        0x890   0x16a  DblAdd.o [3]
+  .text            ro code        0x9fa     0x2  cstartup_M.o [1]
+  .text            ro code        0x9fc    0x28  data_init.o [4]
+  .text            ro code        0xa24    0x22  fpinit_M.o [3]
+  .iar.init_table  const          0xa48    0x10  - Linker created -
+  .text            ro code        0xa58     0x2  cstartup_M.o [1]
+  .text            ro code        0xa5c    0x1e  cmain.o [4]
+  .text            ro code        0xa7a     0x4  low_level_init.o [2]
+  .text            ro code        0xa7e     0x4  exit.o [2]
+  .text            ro code        0xa82     0x2  cstartup_M.o [1]
+  .text            ro code        0xa84     0xa  cexit.o [4]
+  .text            ro code        0xa8e     0x2  cstartup_M.o [1]
+  .text            ro code        0xa90    0x14  exit.o [5]
+  .text            ro code        0xaa4    0x10  cstartup_M.o [1]
+  .text            ro code        0xab4     0x2  cstartup_M.o [1]
+  .text            ro code        0xab6     0x2  cstartup_M.o [1]
+  .rodata          const          0xab8     0x0  zero_init3.o [4]
+                                - 0xab8   0xa28
+
+"P2", part 1 of 2:                          0x8
+  .bss             zero     0x2000'0000     0x8  temperature.o [1]
+                          - 0x2000'0008     0x8
+
+"P2", part 2 of 2:                       0x1000
+  CSTACK                    0x2000'0008  0x1000  <Block>
+    CSTACK         uninit   0x2000'0008  0x1000  <Block tail>
+                          - 0x2000'1008  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0xab8     0x3'ffff  0x3'f548
+  0x2000'1008  0x2000'7fff    0x6ff8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x2000'0000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\lab3\Debug\Obj: [1]
+    cstartup_M.o           36      144
+    temperature.o         684                 8
+    -------------------------------------------
+    Total:                720      144        8
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    DblAdd.o              362
+    DblCmpLe.o             46
+    DblDiv.o              582
+    DblMul.o              418
+    DblSub.o              226
+    U32ToDbl.o             26
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:              1 694
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    data_init.o            40
+    zero_init3.o           58
+    -------------------------------------------
+    Total:                138
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    2        2
+    Linker created                  16    4 096
+-----------------------------------------------
+    Grand Total:        2 582      162    4 104
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base         0xa48         --   Gb  - Linker created -
+.iar.init_table$$Limit        0xa58         --   Gb  - Linker created -
+?main                         0xa5d        Code  Gb  cmain.o [4]
+ADC0_Handler                  0x1a9  0x34  Code  Gb  temperature.o [1]
+ADC_Init                      0x14d  0x5c  Code  Gb  temperature.o [1]
+CSTACK$$Base            0x2000'0008         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1008         --   Gb  - Linker created -
+PLL_Init                       0xf7  0x56  Code  Gb  temperature.o [1]
+PortF_Init                     0xc3  0x34  Code  Gb  temperature.o [1]
+Region$$Table$$Base           0xa48         --   Gb  - Linker created -
+Region$$Table$$Limit          0xa58         --   Gb  - Linker created -
+Timer0_Init                    0x91  0x32  Code  Gb  temperature.o [1]
+__aeabi_cdcmple               0x861        Code  Gb  DblCmpLe.o [3]
+__aeabi_ddiv                  0x535        Code  Gb  DblDiv.o [3]
+__aeabi_dmul                  0x391        Code  Gb  DblMul.o [3]
+__aeabi_dsub                  0x77d        Code  Gb  DblSub.o [3]
+__aeabi_ui2d                  0x33d        Code  Gb  U32ToDbl.o [3]
+__cmain                       0xa5d        Code  Gb  cmain.o [4]
+__exit                        0xa91  0x14  Code  Gb  exit.o [5]
+__iar_dadd                    0x78d        Code  Gb  DblSub.o [3]
+__iar_data_init3              0x9fd  0x28  Code  Gb  data_init.o [4]
+__iar_dsub                    0x891        Code  Gb  DblAdd.o [3]
+__iar_dsubStart               0x8a3        Code  Gb  DblAdd.o [3]
+__iar_init_vfp                0xa25        Code  Gb  fpinit_M.o [3]
+__iar_program_start           0xaa5  0x10  Code  Gb  cstartup_M.o [1]
+__iar_zero_init3              0x357  0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init              0xa7b   0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x90  Data  Gb  cstartup_M.o [1]
+_call_main                    0xa69        Code  Gb  cmain.o [4]
+_exit                         0xa85        Code  Gb  cexit.o [4]
+_main                         0xa77        Code  Gb  cmain.o [4]
+exit                          0xa7f   0x4  Code  Gb  exit.o [2]
+main                          0x1dd  0xc2  Code  Gb  temperature.o [1]
+temp                    0x2000'0000   0x8  Data  Gb  temperature.o [1]
+
+
+[1] = C:\lab3\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  2 582 bytes of readonly  code memory
+    162 bytes of readonly  data memory
+  4 104 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

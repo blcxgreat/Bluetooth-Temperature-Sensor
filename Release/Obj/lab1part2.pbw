@@ -1,0 +1,72 @@
+[
+  {
+    "ID": "c:main.c@62@macro@INITIATE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INITIATE",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "C:\\tutorial\\main.c"
+    },
+    "name": "INITIATE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@112@macro@GPIOF_DIR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOF_DIR",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "C:\\tutorial\\main.c"
+    },
+    "name": "GPIOF_DIR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@163@macro@GPIOF_DEN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOF_DEN",
+    "location": {
+      "column": "9",
+      "line": "6",
+      "path": "C:\\tutorial\\main.c"
+    },
+    "name": "GPIOF_DEN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@214@macro@GPIOF_DATA",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOF_DATA",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "C:\\tutorial\\main.c"
+    },
+    "name": "GPIOF_DATA",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "10",
+      "path": "C:\\tutorial\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  }
+]

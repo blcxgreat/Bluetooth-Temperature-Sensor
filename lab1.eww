@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\lab1part2.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\lab1part3.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\lab1part5.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\lab1partB1.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\lab1partB2.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\lab3sectionA.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\lab3sectionB.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
